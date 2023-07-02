@@ -13,9 +13,25 @@ export const counterSlice = createSlice({
       state.value -= 1;
     },
     reset: (state) => initialState,
+    multiplyByFour: (state) => {
+      state.value *= 4;
+    },
+    divideByThree: (state) => {
+      state.value /= 3;
+    },
+    exponentByTwo: (state) => {
+      state.value **= 2;
+    },
   },
 });
 
-export const { increment, decrement, reset } = counterSlice.actions;
+export const {
+  increment,
+  decrement,
+  reset,
+  multiplyByFour,
+  divideByThree,
+  exponentByTwo,
+} = counterSlice.actions;
 
 export default counterSlice.reducer;

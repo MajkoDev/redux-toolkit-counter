@@ -1,5 +1,12 @@
 import { useDispatch } from 'react-redux';
-import { decrement, increment, reset } from './counterSlice';
+import {
+  decrement,
+  increment,
+  reset,
+  multiplyByFour,
+  divideByThree,
+  exponentByTwo,
+} from './counterSlice';
 
 const CounterActions = () => {
   const dispatch = useDispatch();
@@ -14,6 +21,15 @@ const CounterActions = () => {
         <button onClick={() => dispatch(decrement())}>Subtract</button>
         <button onClick={() => dispatch(reset())}>Reset</button>
       </div>
+      <div>
+        <p>
+          <b>Intermediate Actions</b>
+        </p>
+        <button onClick={() => dispatch(multiplyByFour())}>*4</button>
+        <button onClick={() => dispatch(divideByThree())}>/3</button>
+        <button onClick={() => dispatch(exponentByTwo())}>**2</button>
+      </div>
+
       <div>
         <p>
           <b>Advanced Actions</b>
