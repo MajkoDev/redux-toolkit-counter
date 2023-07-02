@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import {
   decrement,
@@ -10,9 +11,11 @@ import {
 
 const CounterActions = () => {
   const dispatch = useDispatch();
+
   return (
     <>
       <h3>Actions of Counter</h3>
+      <button onClick={() => dispatch(roundNumber())}>Rounded</button>
       <div>
         <p>
           <b>Essential Actions</b>
@@ -34,6 +37,12 @@ const CounterActions = () => {
         <p>
           <b>Advanced Actions</b>
         </p>
+        <button>+</button>
+        <input type="number" />
+        <br />
+        <button>-</button>
+        <input type="number" />
+        <br />
       </div>
     </>
   );
