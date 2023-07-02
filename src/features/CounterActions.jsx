@@ -7,15 +7,27 @@ import {
   multiplyByFour,
   divideByThree,
   exponentByTwo,
+  incrementByAmount,
+  decrementByAmount,
 } from './counterSlice';
 
 const CounterActions = () => {
   const dispatch = useDispatch();
 
+  const [incNum, setIncNum] = useState(0);
+  const [decNum, setDecNum] = useState(0);
+
+  function decrementingByAmount() {
+    dispatch(decrementByAmount(Number(decNum) || 0));
+  }
+
+  function incrementingByAmount() {
+    dispatch(incrementByAmount(Number(incNum) || 0));
+  }
+
   return (
     <>
       <h3>Actions of Counter</h3>
-      <button onClick={() => dispatch(roundNumber())}>Rounded</button>
       <div>
         <p>
           <b>Essential Actions</b>
@@ -37,11 +49,20 @@ const CounterActions = () => {
         <p>
           <b>Advanced Actions</b>
         </p>
-        <button>+</button>
-        <input type="number" />
+        <button onClick={incrementingByAmount}>+</button>
+        <input
+          type="number"
+          value={incNum}
+          onChange={(e) => setIncNum(e.target.value)}
+        />
         <br />
-        <button>-</button>
-        <input type="number" />
+
+        <button onClick={decrementingByAmount}>-</button>
+        <input
+          type="number"
+          value={decNum}
+          onChange={(e) => setDecNum(e.target.value)}
+        />
         <br />
       </div>
     </>
