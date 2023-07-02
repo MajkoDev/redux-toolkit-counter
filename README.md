@@ -1,9 +1,8 @@
-# redux-toolkit-counter
+## Redux Toolkit Counter
 
 [Edit on StackBlitz](https://stackblitz.com/edit/vitejs-vite-fgqgg4)
 
-
-
+![Redux-Counter](/redux-toolkit-counter.gif)
 
 ---
 
