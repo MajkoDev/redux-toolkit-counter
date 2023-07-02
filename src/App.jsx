@@ -1,15 +1,14 @@
 import { useSelector } from 'react-redux';
 import './App.css';
 
+import Counter from './features/Counter';
+import CounterActions from './features/CounterActions';
+
 function App() {
-
-  // receiving value from redux store with useSelector hook
-  const count = useSelector((state) => state.counter.value);
-
   return (
     <>
-      <h2>Redux Toolkit</h2>
-      <h1>{count}</h1>
+      <Counter />
+      <CounterActions />
     </>
   );
 }
