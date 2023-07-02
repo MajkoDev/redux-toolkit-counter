@@ -1,4 +1,8 @@
+import { useDispatch } from 'react-redux';
+import { decrement, increment, reset } from './counterSlice';
+
 const CounterActions = () => {
+  const dispatch = useDispatch();
   return (
     <>
       <h3>Actions of Counter</h3>
@@ -6,9 +10,9 @@ const CounterActions = () => {
         <p>
           <b>Essential Actions</b>
         </p>
-        <button>Add</button>
-        <button>Sub</button>
-        <button>Reset</button>
+        <button onClick={() => dispatch(increment())}>Add</button>
+        <button onClick={() => dispatch(decrement())}>Subtract</button>
+        <button onClick={() => dispatch(reset())}>Reset</button>
       </div>
       <div>
         <p>
